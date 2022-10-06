@@ -1,4 +1,4 @@
-from knight import Knight
+from cell import Cell
 
 
 class KnightTour:
@@ -12,7 +12,7 @@ class KnightTour:
         row = [2, 2, -2, -2, 1, 1, -1, -1]
         col = [1, -1, 1, -1, 2, -2, 2, -2]
 
-        queue = [Knight(start_coord[0], start_coord[1], 0)]
+        queue = [Cell(start_coord[0], start_coord[1], 0)]
 
         visited = [[False for i in range(board_size + 1)]
                    for j in range(board_size + 1)]
@@ -36,5 +36,5 @@ class KnightTour:
                 if (self.is_on_board(x, y, board_size)
                         and not visited[x][y]):
                     visited[x][y] = True
-                    queue.append(Knight(x, y, vertex.level + 1))
+                    queue.append(Cell(x, y, vertex.level + 1))
         return -1
