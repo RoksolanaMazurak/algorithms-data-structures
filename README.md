@@ -5,4 +5,4 @@ and each client was minimal. As a server, you can choose any
 a network node that is not a client.
 Having information about the network topology (which nodes are connected to which, and what is the delay
 of each connection), find the server location that minimizes the most
-delay value to the client. Output this delay value.
+delay value to the client. Output this latency value.
