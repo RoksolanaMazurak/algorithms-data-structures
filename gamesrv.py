@@ -17,7 +17,7 @@ class GameSrv:
         pq.put((0, start_vertex))
         while not pq.empty():
             dist, current_vertex = pq.get()
-            for adjacent in current_vertex.get_neighbours():
+            for adjacent in current_vertex.get_adj_vertices():
                 adjacent_vertex, edge_weight = adjacent
 
                 prev_dist = vertex_dist[adjacent_vertex]
