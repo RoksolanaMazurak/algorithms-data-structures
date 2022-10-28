@@ -18,7 +18,7 @@ class Vertex:
     def add_adj_vertices(self, adjacent, edge_weight: int):
         self.adjacent_vertex.add((adjacent, edge_weight))
 
-    def get_neighbours(self):
+    def get_adj_vertices(self):
         return self.adjacent_vertex
 
 
