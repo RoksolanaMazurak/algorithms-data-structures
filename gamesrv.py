@@ -33,11 +33,11 @@ class GameSrv:
         for vertex in self.connection.vertices:
             if vertex.value not in self.connection.client_vertex:
                 current_vertex_dist = self.dijkstra_shortest_path(vertex)
-                curr_pings_list = []
+                curr_latency_list = []
                 for current_vertex, dist in current_vertex_dist.items():
                     if current_vertex.value in self.connection.client_vertex:
-                        curr_pings_list.append(dist)
-                max_latency.append(max(curr_pings_list))
+                        curr_latency_list.append(dist)
+                max_latency.append(max(curr_latency_list))
         min_of_max_latency = min(max_latency)
         Graph.write_to_file(self.output_file, min_of_max_latency)
         return min(max_latency)
