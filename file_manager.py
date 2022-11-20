@@ -1,37 +1,17 @@
-class FileManager:
+def read_dist_from_file(file_name: str):
+    with open(file_name) as file:
+        dist = int(file.readline())
+    return dist
 
-    def get_board_size(self):
-        with open('resource/input.txt') as rf:
-            size = int(rf.readline())
-        return size
 
-    def get_start(self):
-        start_coord = [None] * 2
-        with open('resource/input.txt') as rf:
+def read_heights_from_file(file_name: str):
+    with open(file_name) as file:
+        lines = file.readlines()
+        heights = [int(height) for height in lines[1].split()]
+    return heights
 
-            for i in range(1, 4):
-                content = int(rf.readline())
-                if i == 2:
-                    start_coord[0] = content
 
-                if i == 3:
-                    start_coord[1] = content
-        return start_coord
-
-    def get_finish(self):
-        finish_coord = [None] * 2
-        with open('resource/input.txt') as rf:
-
-            for i in range(1, 6):
-                content = int(rf.readline())
-
-                if i == 4:
-                    finish_coord[0] = content
-
-                if i == 5:
-                    finish_coord[1] = content
-        return finish_coord
-
-    def write_to_file(self, level: int):
-        with open('resource/output.txt', 'w') as wf:
-            wf.write(str(level))
+def write_res_to_file(file_name: str, res):
+    res = float('{:.2f}'.format(res))
+    with open(file_name, 'w') as file:
+        file.write(str(res))
