@@ -1,11 +1,13 @@
-from file_manager import FileManager
-from knight_tour import KnightTour
+from testing import testing
 
 if __name__ == '__main__':
-    file = FileManager()
-    knight = KnightTour()
-    start = file.get_start()
-    end = file.get_finish()
-    size = file.get_board_size()
+    print("Worst case:")
+    testing("resources/worst_case.txt", "bbbbbbbbbbbbbbbbbbb")
+    print()
+    print("Best case:")
+    testing("resources/best_case.txt", "bbbbbbbbbbbbbb")
+    print()
+    print("Average case:")
+    testing("resources/average_case.txt", "abc")
 
-    file.write_to_file(knight.min_knight_step(start, end, size))
+
